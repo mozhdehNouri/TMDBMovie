@@ -1,6 +1,6 @@
 # TMDBMovie
 
-in this project try to use the newest thing in android
+in this project tried to use the newest thing in android
 
 
 feature :
