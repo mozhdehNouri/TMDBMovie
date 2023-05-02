@@ -18,7 +18,7 @@ Mvi
 
 Hilt 
 
-Modular by hybrid
+Modular by hybrid approch
 
 Test 
 
