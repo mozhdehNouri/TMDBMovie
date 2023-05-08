@@ -1,4 +1,5 @@
 pluginManagement {
+    includeBuild("build-logic")
     repositories {
         google()
         mavenCentral()
@@ -13,8 +14,8 @@ dependencyResolutionManagement {
     }
 }
 rootProject.name = "MovieTMDB"
-include ':app'
-include ':core'
-include ':movie:data'
-include ':movie:domain'
-include ':movie:ui'
+include(":app")
+include(":core")
+include(":movie:data")
+include(":movie:domain")
+include(":movie:ui")
