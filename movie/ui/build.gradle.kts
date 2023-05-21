@@ -7,4 +7,6 @@ android {
 }
 dependencies {
     coreLibraryDesugaring(libs.android.desugarJdkLibs)
+    implementation(libs.androidx.compose.ui.tooling)
+
 }

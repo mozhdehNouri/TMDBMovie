@@ -4,7 +4,7 @@ plugins {
 }
 
 android {
-    namespace = "com.example.movietmdb"
+    namespace = "com.sample.movietmdb"
     defaultConfig {
         versionCode = 1
         versionName = "1.0.0"
@@ -24,11 +24,10 @@ android {
 }
 
 dependencies {
-
+    implementation(project(":core"))
     coreLibraryDesugaring(libs.android.desugarJdkLibs)
     implementation(libs.androidx.activity.compose)
     implementation(libs.androidx.compose.material3)
-    implementation(libs.androidx.compose.runtime)
-    implementation(libs.androidx.compose.ui.tooling.preview)
+
 
 }
