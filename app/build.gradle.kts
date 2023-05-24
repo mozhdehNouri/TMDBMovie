@@ -1,6 +1,8 @@
 plugins {
     id("tmdbMovie.android.application")
     id("tmdbMovie.android.application.compose")
+    id("tmdbMovie.android.hilt")
+    id("tmdbMovie.flavor")
 }
 
 android {
