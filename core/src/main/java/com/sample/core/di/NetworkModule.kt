@@ -1,7 +1,6 @@
-package com.sample.core.network.di
+package com.sample.core.di
 
-import com.example.tmdbmovie.core.BuildConfig
-import com.sample.core.network.CustomInterceptor
+import com.sample.core.BuildConfig
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -18,17 +17,18 @@ import javax.inject.Singleton
 
 @Module
 @InstallIn(SingletonComponent::class)
-class NetworkModule {
+object NetworkModule {
 
 
     // print log server request in logcat when buildTypes is debug
     @Provides
-    fun provideLoggingInterceptor(): HttpLoggingInterceptor = HttpLoggingInterceptor().apply {
-        level = if (BuildConfig.DEBUG) {
-            HttpLoggingInterceptor.Level.BODY
-        } else {
-            HttpLoggingInterceptor.Level.NONE
-        }
+    fun provideLoggingInterceptor(): HttpLoggingInterceptor =
+        HttpLoggingInterceptor().apply {
+            level = if (BuildConfig.DEBUG) {
+                HttpLoggingInterceptor.Level.BODY
+            } else {
+                HttpLoggingInterceptor.Level.NONE
+            }
 
     }
 
@@ -40,7 +40,7 @@ class NetworkModule {
         httpLoggingInterceptor: HttpLoggingInterceptor,
         customInterceptor: CustomInterceptor
     ): OkHttpClient {
-        val timeOut = 30L
+        val timeOut = 5L
 
         val dispatcher = Dispatcher(Executors.newFixedThreadPool(20))
         dispatcher.maxRequests = 20
@@ -62,7 +62,9 @@ class NetworkModule {
     @Provides
     @Singleton
     fun provideRetrofit(
+        httpClient: OkHttpClient
     ): Retrofit = Retrofit.Builder()
+        .client(httpClient)
         .baseUrl(BuildConfig.API_URL)
         .addConverterFactory(GsonConverterFactory.create())
         .build()

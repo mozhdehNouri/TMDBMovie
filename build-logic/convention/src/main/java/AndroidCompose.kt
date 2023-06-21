@@ -29,6 +29,23 @@ internal fun Project.configureAndroidCompose(
             val bom = libs.findLibrary("androidx-compose-bom").get()
             add("implementation", platform(bom))
             add("androidTestImplementation", platform(bom))
+            add(
+                "implementation",
+                libs.findLibrary("androidx.compose.runtime").get()
+            )
+            add(
+                "implementation",
+                libs.findLibrary("androidx.compose.ui.tooling.preview")
+                    .get()
+            )
+            add(
+                "implementation",
+                libs.findLibrary("androidx-compose-ui-util").get()
+            )
+            add(
+                "implementation",
+                libs.findLibrary("androidx.compose.material3").get()
+            )
         }
     }
     tasks.withType<KotlinCompile>().configureEach {

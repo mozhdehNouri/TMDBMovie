@@ -26,11 +26,16 @@ android {
 }
 
 dependencies {
+    implementation(project(":core"))
+    implementation(project(":movie:ui"))
+    implementation(project(":movie:domain"))
+    implementation(project(":movie:data"))
 
     coreLibraryDesugaring(libs.android.desugarJdkLibs)
     implementation(libs.androidx.activity.compose)
     implementation(libs.androidx.compose.material3)
     implementation(libs.androidx.compose.runtime)
+    implementation(libs.androidx.lifecycle.viewModelCompose)
     implementation(libs.androidx.compose.ui.tooling.preview)
 
 }
