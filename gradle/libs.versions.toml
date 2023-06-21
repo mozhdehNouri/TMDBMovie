@@ -52,6 +52,7 @@ retrofitKotlinxSerializationJson = "1.0.0"
 room = "2.5.0"
 secrets = "2.0.1"
 turbine = "0.12.1"
+hiltViewmodel = "1.0.0-alpha03"
 
 [libraries]
 accompanist-systemuicontroller = { group = "com.google.accompanist", name = "accompanist-systemuicontroller", version.ref = "accompanist" }

@@ -1,4 +1,4 @@
-package com.sample.core.network.base
+package com.sample.core.comon
 
 
 import android.content.Context
@@ -10,7 +10,7 @@ import kotlinx.coroutines.withContext
 import retrofit2.Response
 import java.io.IOException
 
-internal abstract class BaseRemoteDataSource(
+abstract class BaseRemoteDataSource(
     context: Context,
 ) {
 

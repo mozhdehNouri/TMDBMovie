@@ -3,9 +3,10 @@ import java.util.Properties
 plugins {
     id("tmdbMovie.android.library")
     id("tmdbMovie.android.hilt")
+    id("tmdbMovie.android.library.compose")
 }
 android {
-    namespace = "com.example.tmdbmovie.core"
+    namespace = "com.sample.core"
     buildFeatures {
         buildConfig = true
     }
@@ -27,7 +28,12 @@ android {
         )
 
         buildConfigField(
-            "String", "API_KEY", "\"${properties.getProperty("API_KEY")}\""
+            "String",
+            "API_KEY",
+            "\"${properties.getProperty("API_KEY")}\""
+        )
+        buildConfigField(
+            "String", "TOKEN", "\"${properties.getProperty("TOKEN")}\""
         )
     }
 
