@@ -1,4 +1,4 @@
-package com.sample.domain.model
+package com.sample.domain.genre
 
 data class GenreResponse(
     val genres: List<GenreListResponse>

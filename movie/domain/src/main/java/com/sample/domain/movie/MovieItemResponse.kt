@@ -1,22 +1,12 @@
-package com.sample.tmdbmovie.ui.data
+package com.sample.domain.movie
 
-sealed class MovieUiState {
-    data class GenreState(
-        val genres: List<GenreItemResponseView>
-    ) : MovieUiState()
 
-    data class MovieItemState(
-        val movie: List<MovieItemResponseView>
-    )
-
-}
-
-data class GenreItemResponseView(
-    val id: Int,
-    val name: String
+data class MovieResponse(
+    val page: Int,
+    val movieListResults: List<MovieItemResponse>,
 )
 
-data class MovieItemResponseView(
+data class MovieItemResponse(
     val adult: Boolean,
     val backdropPath: String,
     val genreIds: List<Int>,

@@ -12,6 +12,7 @@ dependencies {
     coreLibraryDesugaring(libs.android.desugarJdkLibs)
     implementation(libs.androidx.compose.ui.tooling)
     implementation(libs.androidx.lifecycle.viewModelCompose)
-
+    implementation(libs.kotlinx.coroutines.android)
+    implementation(libs.kotlinx.coroutines.core)
 
 }

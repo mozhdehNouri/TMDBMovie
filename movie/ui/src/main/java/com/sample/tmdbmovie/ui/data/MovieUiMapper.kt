@@ -1,12 +1,38 @@
 package com.sample.tmdbmovie.ui.data
 
-import com.sample.domain.model.GenreListResponse
-import com.sample.domain.model.GenreResponse
+import com.sample.domain.genre.GenreListResponse
+import com.sample.domain.genre.GenreResponse
+import com.sample.domain.movie.MovieItemResponse
+import com.sample.domain.movie.MovieResponse
 
 fun GenreResponse.toGenreUiResponse() =
-    MovieUiState.GenreUi(genres.map {
+    MovieUiState.GenreState(genres.map {
         it.toGenreUiListResponse()
     })
 
 fun GenreListResponse.toGenreUiListResponse() =
-    GenreListUi(id = id, name = name)
+    GenreItemResponseView(id = id, name = name)
+
+
+fun MovieResponse.toMovieResponseView() =
+    MovieUiState.MovieItemState(movieListResults.map {
+        it.toMovieItemResponseView()
+    })
+
+fun MovieItemResponse.toMovieItemResponseView() =
+    MovieItemResponseView(
+        adult = adult,
+        backdropPath = backdropPath,
+        genreIds = genreIds,
+        id = id,
+        originalLanguage = originalLanguage,
+        originalTitle = originalTitle,
+        overview = overview,
+        popularity = popularity,
+        posterPath = posterPath,
+        releaseDate = releaseDate,
+        title = title,
+        video = video,
+        voteAverage = voteAverage,
+        voteCount = voteCount
+    )
