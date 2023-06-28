@@ -40,7 +40,7 @@ object NetworkModule {
         httpLoggingInterceptor: HttpLoggingInterceptor,
         customInterceptor: CustomInterceptor
     ): OkHttpClient {
-        val timeOut = 5L
+        val timeOut = 30L
 
         val dispatcher = Dispatcher(Executors.newFixedThreadPool(20))
         dispatcher.maxRequests = 20

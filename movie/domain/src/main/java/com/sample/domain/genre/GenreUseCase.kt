@@ -1,4 +1,4 @@
-package com.sample.domain.useCase
+package com.sample.domain.genre
 
 import com.sample.domain.repository.MovieRepository
 import javax.inject.Inject

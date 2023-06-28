@@ -14,10 +14,28 @@ android {
     defaultConfig {
         buildTypes {
             debug {
-                buildConfigField("String", "API_URL", "\"https://api.themoviedb.org/3/\"")
+                buildConfigField(
+                    "String",
+                    "API_URL",
+                    "\"https://api.themoviedb.org\""
+                )
+                buildConfigField(
+                    "String",
+                    "IMAGE_BASE_URL",
+                    "\"https://image.tmdb.org/t/p/original\""
+                )
             }
             release {
-                buildConfigField("String", "API_URL", "\"https://api.themoviedb.org/3/\"")
+                buildConfigField(
+                    "String",
+                    "API_URL",
+                    "\"https://api.themoviedb.org\""
+                )
+                buildConfigField(
+                    "String",
+                    "IMAGE_BASE_URL",
+                    "\"https://image.tmdb.org/t/p/original\""
+                )
             }
         }
 
@@ -43,4 +61,5 @@ dependencies {
     api(libs.retrofit.core)
     api(libs.retrofit.convertor.gson)
     implementation(libs.okhttp.logging)
+    implementation(libs.coil.kt.compose)
 }
